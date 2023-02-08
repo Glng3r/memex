@@ -1,1 +1,0 @@
-A factorial is the product of all numbers before it. So 3! (factorial) will be 3 x 2 x 1 = 6.
