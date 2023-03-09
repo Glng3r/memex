@@ -1,4 +1,4 @@
-tags: #memex2 
+tags: #memex2 #atomic #telephone 
 
 > [!quote|#a28ae5] Highlight
 > The electric telegraph was not really the first device to do this—smoke signals, semaphore flags, and optical telegraphs all transmit intelligence faster than human messengers. But because the electric telegraph drastically increased the speed and distance that messages could travel, it has often been seen as liberating communication from the constraints of geography or the transportation of physical objects.

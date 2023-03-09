@@ -4,7 +4,7 @@ date: 2023-03-05
 type: literature
 project:
 ---
-tags:: #monopoly #telegraph #memex2
+tags:: #monopoly #telegraph #memex2 #atomic 
 projects::[[]]
 
 It is undeniable that the British had a monopoly, especially in the 1890s. ![[cabledominance.png]]
@@ -23,5 +23,5 @@ Many of these companies used various anticompetitive means to knock out competit
 
 ### Related Links
 With their huge monopoly of the telegraph industry, they essentially had the power to control what information goes around. [[policing media]]
-[[Britians Motivation for Telegraph]]
+[[Britians Motivation for Telegraphy]] [[American monopoly]] 
 With this monopoly they would have a huge advantage in war because information is key. [[Ciphers Hold Power in war]]

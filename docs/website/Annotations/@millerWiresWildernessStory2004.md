@@ -70,26 +70,12 @@ alias: ["Wires in the wilderness the story of the Yukon Telegraph"]
 >
 > [Page 20](zotero://open-pdf/library/items/8YJQPTWG?page=20) [[2023-03-07#9:23 pm]]
 
-> [!quote|#5fb236] Highlight
-> Afaster and more reliable system was needed—"urgently needed," according to the comptroller of the NWMP, who suggested that a telegraph or telephone line be constructed from the summit of the Chilkoot Pass to Dawson City, a distance of about 600 miles. It should be an inexpensive line, he wrote, a light wire suspended from standing trees that could later be abandoned
->
->> Interesting tactic. Having the government start off small giving them the mindset that they already have some money sunk it and they do not want to waste that money.
->
-> [Page 20](zotero://open-pdf/library/items/8YJQPTWG?page=20) [[2023-03-07#9:26 pm]]
+[[Starting off small]]
 
-> [!quote|#5fb236] Highlight
-> The plan also called for an "examination" of an "all-Canadian" telegraph connection through British Columbiathat would avoid U.S. territory, precluding further reliance on the Bennett CitySkagway line.
->
->> Will look really good on them politically,
->
-> [Page 22](zotero://open-pdf/library/items/8YJQPTWG?page=22) [[2023-03-07#9:33 pm]]
+[[The All Canadian Telegraph]]
 
 #### Interesting but not relevant
 
-> [!quote|#aaaaaa] Highlight
-> The
->
-> [Page 17](zotero://open-pdf/library/items/8YJQPTWG?page=17) [[2023-03-07#4:46 pm]]
 
 
 %% end annotations %%

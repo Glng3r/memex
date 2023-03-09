@@ -1,6 +1,4 @@
-tags: #memex2 
-
-
+tags: #memex2 #atomic #telephone <br>
 > [!quote|#ff6666] Highlight
 > American telephone industry as a decentralized network of local and regional systems, each owned and operated by residents of the territories they served
 >
@@ -14,3 +12,7 @@ tags: #memex2
 >> While having a monopoly is bad, I think that privatizing the industry is even worse because then it becomes an argument of free speech.
 >
 > [Page 5](zotero://open-pdf/library/items/Y85GVLPR?page=5) [[2023-03-08#12:52 pm]]
+
+<br>
+Related Links: <br>
+[[policing media]] [[Opposing policing media]] [[American monopoly]] 

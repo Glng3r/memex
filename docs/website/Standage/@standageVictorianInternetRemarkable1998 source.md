@@ -24,3 +24,6 @@ One of the main devices Standage covers is the Claude Chappe Signalling Device, 
 ### Links
 [[@standageVictorianInternetRemarkable1998 source]]
 [[Morse's Inspiration (pg.25-27)]]
+[[Chapter 5 Wiring the world (page 74)]]
+[[Morse Code]]
+[[Claude Chappe Signalling Device]]

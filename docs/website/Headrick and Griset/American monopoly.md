@@ -2,7 +2,6 @@
 Related:
 [[British Telegraph Monopoly]]
 [[@headrickSubmarineTelegraphCables2001 source]]
-[[@headrickSubmarineTelegraphCables2001]]
 
 
 > [!quote|#a28ae5] Highlight

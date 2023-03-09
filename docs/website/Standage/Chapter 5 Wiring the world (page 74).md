@@ -1,4 +1,6 @@
-Reference: [[@standageVictorianInternetRemarkable1998 source]]
+tags<br> #memex2 #telegraph 
+<br>
+Reference: [[@standageVictorianInternetRemarkable1998 source]]<br>
 #### Transatlantic Telegraph
 ###### Gisborne's attempt
 -  to start with a link from New York to St. John's to prove the concept. It worked, but quickly stopped because of the harsh winter conditions.
@@ -51,6 +53,5 @@ Reference: [[@standageVictorianInternetRemarkable1998 source]]
 - 1864 first cable linking Europe and India via the Persian Gulf (pg 87).
 - Friday July 13, the _Great Eastern_ successfully linked Ireland and Newfoundland (pg 88). 
 
-tags<br> #memex2
 <br>
-Related Links:[[Morse Code]]  [[Morse Code]][[Britians Motivation for Telegraph]] [[Emergence of the telegraph]] 
+Related Links:[[Morse Code]]  [[Morse Code]] [[Britians Motivation for Telegraphy]]  [[Emergence of the telegraph]] 

@@ -10,6 +10,7 @@ projects::[[]]
 Often dubbed the first telegraph. 
 
 The very first iteration that was devised was by striking two casserole dishes that could be heard from ways away, then the person listening for it would dicipher what it meant by the different kinds of "clangs." They used a [[code book]] to store what the different "clangs meant. The caveat was that you had to be within earshot and the message could easily be lost in translation. To improve on this, Chappe switching to flipping a tall board with black on one side and white on the other with each flip representing something, this drastically improved the range of the mechanism. In the final design it became a tower with a few arms that could tilt with each combination representing a different code in the codebook (Standage,1998). 
+![[claudechappedevice.jpg]]
 #### Things holding it back
 There were many things holding the technology back from adoption, one of the main ones was the turmoil from the French Revolution, the government was very preoccupied by Napoleon. Another was that the second test was sabotaged by a mob of protestors. 
 

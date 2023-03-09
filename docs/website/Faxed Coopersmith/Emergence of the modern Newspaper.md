@@ -5,8 +5,10 @@
 >
 > [Page 24](zotero://open-pdf/library/items/CCF4QASF?page=24) [[2023-03-07#1:44 pm]]
 
-tags: #media #Fax-machines #atomic #telegraph #Technological-innovations #memex2
+tags: #media #Fax #atomic #telegraph #Technological-innovations #memex2 
+<br>
 Related Links:
 [[@coopersmithFaxedRiseFall2015 source]]
-[[Emergence]] [[future media]] [[Medium is important]] 
+[[Emergence]] [[future media]] [[Medium is important]] [[definition of media]]
 This evolves the idea of the importance of context [[Context of the Work]].
+

@@ -4,7 +4,7 @@ date: 2023-03-02
 type: literature
 project:
 ---
-tags:: #Cipher #atomic #Standage #Morse #memex2
+tags:: #Cipher #atomic #Standage #Morse #memex2 #telegraph 
 projects::[[]]
 
 
@@ -21,4 +21,5 @@ Morse code is a very simple kind of cipher. It is very similar to the substituti
 
 ### Related Links
 
-This is a very very simple kind of a [[Substitution Cipher]]
+This is a very simple kind of a [[Substitution Cipher]].
+[[Linguistics and meaning]]

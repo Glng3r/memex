@@ -1,4 +1,4 @@
-tags: #memex2 
+tags: #memex2 #Technological-innovations #Bell
 
 
 > [!quote|#a28ae5] Highlight
@@ -7,3 +7,8 @@ tags: #memex2
 >> Bell Company pretty much became what it was made to fight against. It has been proven time and time again that money in this day and age is what constitutes success. Even the right of communication is overpowered by the search for money.
 >
 > [Page 12](zotero://open-pdf/library/items/Y85GVLPR?page=12) [[2023-03-08#1:31 pm]]
+
+This is showing that money is what governs innovation and technology.
+<br>
+Related Links:
+[[Economics govern techonolgy]] 

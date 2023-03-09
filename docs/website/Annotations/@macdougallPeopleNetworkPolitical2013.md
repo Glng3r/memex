@@ -107,17 +107,9 @@ Theodore Vail's view of one big network, one where there is just the one network
 >
 > [Page 16](zotero://open-pdf/library/items/Y85GVLPR?page=16) [[2023-03-08#1:54 pm]]
 
-> [!quote|#a28ae5] Highlight
-> Bell ordered its managers to transmit any telegraph messages they received by telephone to Western Union, effectively turning all local telephone networks into a feeder system for the telegraph giant.
->
-> [Page 17](zotero://open-pdf/library/items/Y85GVLPR?page=17) [[2023-03-08#1:56 pm]]
+[[The alliance of Bell and Western Union]]
 
-> [!quote|#a28ae5] Highlight
-> Forbes also promised not to provide telephone service to any companies in competition with Western Union—an explicit endorsement of the telegraph monopoly
->
->> Cutting off business just because they are competing against another company, heavy monopolistic behavior.
->
-> [Page 17](zotero://open-pdf/library/items/Y85GVLPR?page=17) [[2023-03-08#1:57 pm]]
+[[The alliance of Bell and Western Union]]
 
 > [!quote|#a28ae5] Highlight
 > rst the dozens of Bell-affiliated operating companies that leased the right to use Bell’s patents, and later the thousands of independent companies that challenged them. In large cities and in tiny hamlets, both Bell and independent operating companies faced the street-level challenges of telephony, and their innovations built the industry. American Bell did own stock in several affiliated operating companies, particularly in large markets like New York and Chicago, but these companies still remained organizationally distinct.

@@ -22,7 +22,7 @@ In the introduction to *From Clay Tablets to Web*(2013), Shiv Kumar goes through
 
 ### Links
 
-There were some [[Historical Developments]] in organization from Callimachus.
+There were some [[Historical Developments of Library Systems]] in organization from Callimachus.
 The first appearance of any sort of organization was the [[The dictionary catalog]] method.
 [[Computer-based Catalogs]]
 [[Development of Catalogue codes]] by the British and Americans created a foundation for other standards to build on.
