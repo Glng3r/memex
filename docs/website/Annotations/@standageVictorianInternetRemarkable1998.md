@@ -75,7 +75,7 @@ Morse and Leonard Gale teamed up, with Vail to provide the financials.
 - using many small batteries instead of one large one to transmit the signal further (page 33)
 
 
-[[Morse's Inspiration (pg.25-27)]]
+[[Morse's Inspiration pg.25-27]]
 #### Morse's History (pg.25-27)
 - A painter.
 - Became interested in faster information relay when he only got notice of his wife's passing and funeral a day before it.
