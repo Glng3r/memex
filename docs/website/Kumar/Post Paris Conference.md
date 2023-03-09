@@ -19,4 +19,4 @@ Kumar, S. (2013, January 1). _From clay tablets to web: Journey of Library Catal
 
 ### Related Links
 
-The changes here help form the bases to my idea in [[Accessibility]].
+The changes here help form the bases to my idea in [[website/Kumar/Accessibility]].

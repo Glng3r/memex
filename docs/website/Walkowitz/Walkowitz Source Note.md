@@ -1,5 +1,5 @@
 ---
-Title: (Walkowitz, 2009)
+Title:  @
 date: 2023-01-28
 type: reference
 project:

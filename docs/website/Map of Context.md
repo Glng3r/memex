@@ -13,15 +13,15 @@
 ### Summary Note:
 [[Walkowitz Source Note]]
 
-[[Clay Tablets Source Note]]
+[[@shivkumarClayTabletsWeb2013 source]]
 
-[[Source IEEE ciper article]]
+[[@rathideviTrendsCryptographyStepping2017 source]]
 
-[[Media History Source Note]]
+[[@gitelmanMediaHistoricalSubjects2006 source]]
 
-[[Dooley Source Note]]
+[[@dooleyIntroductionRevolutionaryCipher2018 source]]
 
-### Atomic notes:
+## Atomic notes:
 
 ### Cryptology:
 
@@ -52,8 +52,8 @@
 [[What you Write]]
 
 
-Else:
----
+### Uncategorized
+
 
 [[Computer-based Catalogs]]
 
@@ -84,7 +84,7 @@ Idea Notes:
 ---
 [[Opposing policing media]]
 
-[[Accessibility]]
+[[website/Kumar/Accessibility]]
 
 
 ### Below is a map of the interlinkage between notes:
