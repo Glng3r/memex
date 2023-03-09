@@ -1,4 +1,3 @@
 ```dataview
-list
-#memex2 
+list from #memex2 
 ```
