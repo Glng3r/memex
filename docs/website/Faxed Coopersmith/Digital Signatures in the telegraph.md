@@ -1,5 +1,5 @@
 ---
-Title: PUT THE TITLE OF NOTE HERE
+Title: @coopersmithFaxedRiseFall2015
 date: 2023-03-10
 type: literature
 project:
@@ -18,7 +18,7 @@ projects::[[]]
 its like a very early version of a digital signature, [joseph's memex](https://jmcn99.github.io/hist1900-memex/atomic_notes/data%20integrity/) goes into this topic a little deeper so i suggest you check it out. Its pretty much to verify who sent the message by having a code that belongs to you, something that someone cannot easily recreate.
 ### Citational Information
 
-Link to the originating literature note.
+Coopersmith, J. 2015. _Faxed: the rise and fall of the fax machine_. Johns Hopkins Studies in the History of Technology. Baltimore, Maryland: Johns Hopkins University Press.
 
 ---
 
