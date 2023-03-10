@@ -23,6 +23,6 @@ There are many advancements made to try and make the fax an effective technology
 --- 
 
 ### Links
-[[Emergence of the modern Newspaper]] [[Thoughts of the future using Telegraphs]] [[The Telegraph for Asia]] 
+[[Emergence of the modern Newspaper]] [[Thoughts of the future using Telegraphs]] [[The Telegraph for Asia]] [[Digital Signatures in the telegraph]]
 
 
