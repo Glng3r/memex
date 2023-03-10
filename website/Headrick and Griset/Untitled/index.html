@@ -1,0 +1,921 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../Emergence%20of%20the%20telegraph/" rel="prev"/>
+<link href="../../IEEE%20cryptology/%40rathideviTrendsCryptographyStepping2017%20source/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.2" name="generator"/>
+<title>Annotations - Eric Desrosiers Memex</title>
+<link href="../../../assets/stylesheets/main.7bf56d0a.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="green" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#annotations">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Eric Desrosiers Memex" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Eric Desrosiers Memex">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Eric Desrosiers Memex
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Annotations
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="yellow" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="brown" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Eric Desrosiers Memex" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Eric Desrosiers Memex">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Eric Desrosiers Memex
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Website
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          Website
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Map%20of%20Content/">
+        Map of Content
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Map%20of%20Context%20Memex%202/">
+        Map of Context Memex 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Map%20of%20Context/">
+        Memex 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Untitled/">
+        Untitled
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+          Annotations
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_6_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_6">
+<span class="md-nav__icon md-icon"></span>
+          Annotations
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40coopersmithFaxedRiseFall2015/">
+        @coopersmithFaxedRiseFall2015
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40dooleyIntroductionRevolutionaryCipher2018/">
+        @dooleyIntroductionRevolutionaryCipher2018
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40gitelmanMediaHistoricalSubjects2006/">
+        @gitelmanMediaHistoricalSubjects2006
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40headrickSubmarineTelegraphCables2001/">
+        @headrickSubmarineTelegraphCables2001
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40macdougallPeopleNetworkPolitical2013/">
+        @macdougallPeopleNetworkPolitical2013
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40millerWiresWildernessStory2004/">
+        @millerWiresWildernessStory2004
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40rathideviTrendsCryptographyStepping2017/">
+        @rathideviTrendsCryptographyStepping2017
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40shivkumarClayTabletsWeb2013/">
+        @shivkumarClayTabletsWeb2013
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/%40standageVictorianInternetRemarkable1998/">
+        @standageVictorianInternetRemarkable1998
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/Annotations%20On%20Taking%20Notes/">
+        On Taking Notes | Perspectives on History | AHA
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations/Annotations/">
+        On Taking Notes | Perspectives on History | AHA
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+          Dooley
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_7_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_7">
+<span class="md-nav__icon md-icon"></span>
+          Dooley
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Dooley/%40dooleyIntroductionRevolutionaryCipher2018%20source/">
+        @dooleyIntroductionRevolutionaryCipher2018 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Dooley/Dooley%20Source%20Note/">
+        Dooley Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Dooley/Steganography%20Vs%20Cryptology/">
+        Steganography Vs Cryptology
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Dooley/Substitution%20Cipher/">
+        Substitution Cipher
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Dooley/Transposition%20Cipher/">
+        Transposition Cipher
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+          Faxed Coopersmith
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_8_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_8">
+<span class="md-nav__icon md-icon"></span>
+          Faxed Coopersmith
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Faxed%20Coopersmith/%40coopersmithFaxedRiseFall2015%20source/">
+        @coopersmithFaxedRiseFall2015 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Faxed%20Coopersmith/Digital%20Signatures%20in%20the%20telegraph/">
+        Digital Signatures in the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Faxed%20Coopersmith/Emergence%20of%20the%20modern%20Newspaper/">
+        Emergence of the modern Newspaper
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Faxed%20Coopersmith/The%20Telegraph%20for%20Asia/">
+        The Telegraph for Asia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Faxed%20Coopersmith/Thoughts%20of%20the%20future%20using%20Telegraphs/">
+        Thoughts of the future using Telegraphs
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+          Gitelman
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_9_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_9">
+<span class="md-nav__icon md-icon"></span>
+          Gitelman
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/%40gitelmanMediaHistoricalSubjects2006%20source/">
+        @gitelmanMediaHistoricalSubjects2006 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/Emergence/">
+        Emergence
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/Media%20History%20Source%20Note/">
+        Media History Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/Medium%20is%20important/">
+        Medium is important
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/Opposing%20policing%20media/">
+        Opposing policing media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/Specificity%20is%20key/">
+        Specificity is key
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/definition%20of%20media/">
+        Definition of media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/future%20media/">
+        Future media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/medium%20is%20a%20carrier/">
+        Medium is a carrier
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Gitelman/policing%20media/">
+        Policing media
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+          Headrick and Griset
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_10_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_10">
+<span class="md-nav__icon md-icon"></span>
+          Headrick and Griset
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%40headrickSubmarineTelegraphCables2001%20source/">
+        @headrickSubmarineTelegraphCables2001 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Accessibility%20with%20the%20telegraph/">
+        Accessibility with the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../American%20monopoly/">
+        American monopoly
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Britians%20Motivation%20for%20Telegraph/">
+        Britians Motivation for Telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Britians%20Motivation%20for%20Telegraphy/">
+        Britians Motivation for Telegraphy
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../British%20Telegraph%20Monopoly/">
+        British Telegraph Monopoly
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Emergence%20of%20the%20telegraph/">
+        Emergence of the telegraph
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Annotations
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+          IEEE cryptology
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_11_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_11">
+<span class="md-nav__icon md-icon"></span>
+          IEEE cryptology
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/%40rathideviTrendsCryptographyStepping2017%20source/">
+        @rathideviTrendsCryptographyStepping2017 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Ancient%20Egypt/">
+        Ancient Egypt
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Ceasar%20Cipher/">
+        Ceasar Cipher
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Ciphers%20Hold%20Power%20in%20war/">
+        Ciphers Hold Power in war
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Emergence%20of%20the%20telegraph/">
+        Emergence of the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Source%20IEEE%20ciper%20article/">
+        Source IEEE ciper article
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../IEEE%20cryptology/Syctale%20tool/">
+        Syctale tool
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+          Kumar
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_12_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_12">
+<span class="md-nav__icon md-icon"></span>
+          Kumar
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/%40shivkumarClayTabletsWeb2013%20source/">
+        @shivkumarClayTabletsWeb2013 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Accessibility/">
+        Accessibility
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Clay%20Tablets%20Source%20Note/">
+        Clay Tablets Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Computer-based%20Catalogs/">
+        Computer based Catalogs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Development%20of%20Catalogue%20codes/">
+        Development of Catalogue codes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Early%20OPAC/">
+        Early OPAC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Historical%20Developments%20of%20Library%20Systems/">
+        Historical Developments of Library Systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Historical%20Developments/">
+        Historical Developments
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Later%20OPAC%20upgrades/">
+        Later OPAC upgrades
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/Post%20Paris%20Conference/">
+        Post Paris Conference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Kumar/The%20dictionary%20catalog/">
+        The dictionary catalog
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_13" id="__nav_2_13_label" tabindex="0">
+          MacDougall People's Network
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_13_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_13">
+<span class="md-nav__icon md-icon"></span>
+          MacDougall People's Network
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/%40macdougallPeopleNetworkPolitical2013%20source/">
+        @macdougallPeopleNetworkPolitical2013 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/Ambition/">
+        Ambition
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/Business%20differences%20for%20the%20telephone/">
+        Business differences for the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/Collapsing%20space%20time%20with%20the%20telephone/">
+        Collapsing space time with the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/The%20alliance%20of%20Bell%20and%20Western%20Union/">
+        The alliance of Bell and Western Union
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/Turnaround%20of%20Bell%27s%20Ideals/">
+        Turnaround of Bell's Ideals
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/privitizing%20the%20telephone/">
+        Privitizing the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../MacDougall%20People%27s%20Network/segregation%20with%20telephone/">
+        Segregation with telephone
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_14" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_14" id="__nav_2_14_label" tabindex="0">
+          My Own Ideas
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_14_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_14">
+<span class="md-nav__icon md-icon"></span>
+          My Own Ideas
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../My%20Own%20Ideas/Early%20Development%20of%20Technology/">
+        Early Development of Technology
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../My%20Own%20Ideas/Economics%20govern%20techonolgy/">
+        Economics govern techonolgy
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../My%20Own%20Ideas/Linguistics%20and%20meaning/">
+        Linguistics and meaning
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../My%20Own%20Ideas/Urban%20Myth%20of%20telegraph/">
+        Urban Myth of telegraph
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_15" id="__nav_2_15_label" tabindex="0">
+          Standage
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_15_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_15">
+<span class="md-nav__icon md-icon"></span>
+          Standage
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/%40standageVictorianInternetRemarkable1998%20source/">
+        @standageVictorianInternetRemarkable1998 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Chapter%205%20Wiring%20the%20world%20%28page%2074%29/">
+        Chapter 5 Wiring the world (page 74)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Claude%20Chappe%20Signalling%20Device/">
+        Claude Chappe Signalling Device
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Morse%20Code/">
+        Morse Code
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Morse%27s%20Inspiration%20%28pg.25-27%29/">
+        Morse's Inspiration (pg.25 27)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Morse%27s%20Inspiration%20pg.25-27/">
+        Morse's Inspiration pg.25 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Standage/Stagner%20rough%20notes%20and%20observations./">
+        Stagner rough notes and observations.
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_16" id="__nav_2_16_label" tabindex="0">
+          Walkowitz
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_16_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_16">
+<span class="md-nav__icon md-icon"></span>
+          Walkowitz
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/Context%20of%20the%20Work/">
+        Context of the Work
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/Organizing%20information/">
+        Organizing information
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/Reaserching%20the%20topic/">
+        Reaserching the topic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/Source%20Note/">
+        Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/Walkowitz%20Source%20Note/">
+        Walkowitz Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/What%20you%20Write/">
+        What you Write
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Walkowitz/going%20prepared/">
+        Going prepared
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_17" id="__nav_2_17_label" tabindex="0">
+          Tag accessible
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_17_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_17">
+<span class="md-nav__icon md-icon"></span>
+          Tag accessible
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tag%20accessible/code%20book/">
+        Code book
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tag%20accessible/colonialism/">
+        Colonialism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tag%20accessible/factorial/">
+        Factorial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../tag%20accessible/sui%20generis/">
+        Sui generis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2_18" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2_18" id="__nav_2_18_label" tabindex="0">
+          Wires in the wilderness
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_18_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_2_18">
+<span class="md-nav__icon md-icon"></span>
+          Wires in the wilderness
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wires%20in%20the%20wilderness/%40millerWiresWildernessStory2004%20source/">
+        @millerWiresWildernessStory2004 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wires%20in%20the%20wilderness/Starting%20off%20small/">
+        Starting off small
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wires%20in%20the%20wilderness/The%20All%20Canadian%20Telegraph/">
+        The All Canadian Telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../wires%20in%20the%20wilderness/The%20why%20of%20the%20Yukon%20Telegraph/">
+        The why of the Yukon Telegraph
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="annotations">Annotations<a class="headerlink" href="#annotations" title="Permanent link">¶</a></h1>
+<p>(3/5/2023, 12:25:07 PM)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=2&amp;annotation=BVXLLSCM">Go to annotation</a>“, British firms held a near monopoly” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 2</a>) Similar to how Canada is right now, its a monopoly between Bell and Rogers. With the Rogers-Shaw merge it could enhance that.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=2&amp;annotation=TKFP3BEF">Go to annotation</a>“ies. Telecommunications enterprises are so vital to national security, economic prosperity, and the dissemination of news that all governments regulate them to a greater or lesser degr” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 2</a>) Canada has some of the highest data cost in the modern world. (find paper about it)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=3&amp;annotation=SZUQN6VA">Go to annotation</a>“' This article, in contrast, analyzes the history of submarine telegraph companies, both as global enterprises and as extensions of the diplomatic and military power of their home nations outside their borders.” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 3</a>) Thesis (pg3)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=3&amp;annotation=7VUNHZF5">Go to annotation</a>“e, the Eastern and Associated Telegraph Compan” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 3</a>) Monopoly</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=3&amp;annotation=TWK8BUSN">Go to annotation</a>“Britain's lead in global trade and shipping; and, most important, the subsidies and hidden support provided by the British government. This third factor was essential to the success of the industry because submarine cables, like shipping and aviation, were enmeshed in international politics and, occasionally, in warfar” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 3</a>) Britain's vast network of colonies gave them a reason to build this network, so they can have more direct power over them. Instead of it taking weeks or months for information to get from the homeland to India it could now be done in a matter of minutes.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=4&amp;annotation=WP578CSH">Go to annotation</a>“had been transformed from business enterprises into weapons of war.” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 4</a>) It is a true tested fact that intelligence wins wars. As an example on the main reasons Hitler dominated Europe was because of the Enigma letting the German's have ultra secure communication.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=4&amp;annotation=DJCWSF6K">Go to annotation</a>“1790” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 4</a>) use for timeline</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=4&amp;annotation=YR543GZ5">Go to annotation</a>“e 1830” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 4</a>) use for timeline</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=4&amp;annotation=6MBL5C4L">Go to annotation</a>“1840” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 4</a>) use for timeline</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=5&amp;annotation=5F3CS2KF">Go to annotation</a>“an. A year later, Thomas Crampton founded the Submarine Telegraph Company. With ?7,500 of his own money and another ?7,500 from two associates, he was able to purchase and lay a second cable across the Channel, this one protected by an armor of iron wire wrapped around the core of copper insulated with gutta percha. This cable was a success (it lasted thirty-seven years) and launched a new industr” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 5</a>) The big technological discovery before underwater cables became a feasable thing.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=5&amp;annotation=SF3N9P26">Go to annotation</a>“cable. Manufacturers of iron cables for mines and bridges like R. S. Newall and Company and Kuper and Company, of telegraph equipment like W. T. Henley and Siemens und Halske, and of molded plastic like the London Gutta Percha Company, as well as new firms like Glass Elliot and Company, all vied for a share of the new business. In the process, they encountered many unforeseen obstacles in manufacturing long cables, laying them on the ocean floor, and understanding their electric properties. There were few successes and many spectacular fai” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 5</a>) Competition promotes innovation. Seems to be trend throughout multiple readings especially with the telegraph.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=5&amp;annotation=IL95TCR5">Go to annotation</a>“The first long-distance cables were government ventures undertaken for military and colonial pu” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 5</a>) It is a trend throughout history that war/military promotes the most amount of innovation. An example would be Chappe's manual telegraph, Napoleon liked it because he could use it for his military.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=5&amp;annotation=YDLKQWC9">Go to annotation</a>“uipment. The French government, eager to communicate with its troublesome colony of Alge” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 5</a>) Again, more colonial needs.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=6&amp;annotation=ATJCXQQA">Go to annotation</a>“he British government at the time was desperate to communicate with India, where a major uprising, called the "Sepoy Rebellion" (after the Indian Army soldiers who mutinied), threatened to overthrow British rul” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 6</a>) I was right earlier about communications with India and about military needs.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=6&amp;annotation=E5HUZJZF">Go to annotation</a>“The first generation of cables, laid in response to the urgent needs of the two major colonial powers, failed because the technology was not yet sufficiently developed to satisfy the demands of its customers.” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 6</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=6&amp;annotation=UHT5P2KD">Go to annotation</a>“reverse salient."” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 6</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=6&amp;annotation=UABWIBFI">Go to annotation</a>“The failure of the Red Sea cable did not diminish the British government's demand for communications to India” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 6</a>) desperation to keep their hold. Could be foreshadowing their economy stagnating in the early 20th century.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=7&amp;annotation=L94G2LTG">Go to annotation</a>“If governments were eager to communicate with their colonies, the business community was much more interested in the North Atlanti” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 7</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=7&amp;annotation=DZWDD8MP">Go to annotation</a>“of Jacob B” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 7</a>) name has been mentioned many times.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=7&amp;annotation=V34CR9IS">Go to annotation</a>“e Atlantic Telegraph Comp” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 7</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=8&amp;annotation=WFMGD56I">Go to annotation</a>“handwringing in the business community but also serious technological research and a complete commercial restructuring.” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 8</a>) people were mad they lost their money</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=8&amp;annotation=QMSD7QN7">Go to annotation</a>“John Pender, a Manchester cotton magnat” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 8</a>) cotton was very profitable, especially if gotten from the confederate south, makes sense he would have the money.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=8&amp;annotation=TE3NG5YP">Go to annotation</a>“He merged the London Gutta Percha Company with Glass Elliot to form Telegraph Construction and Maintenance, or TC&amp;M, a full-service supplier of cable” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 8</a>) possibly another monopoly.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=9&amp;annotation=8RH4WWVP">Go to annotation</a>“'6 Western Union had by then acquired the lines and offices of the American Telegraph Company along the eastern seaboard of the United States and was well on its way to achieving a near monopoly of telegraphs in the United St” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 9</a>) again, a monopoly</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=10&amp;annotation=A9CCDDKX">Go to annotation</a>“Not only did Britain have a large colonial empire long before other nations, but its colonies-especially India-generated a great deal of trade. Several of them-Canada, Australia, and South Africa in particular-had substantial European settler populations; hence, they were of special interest to the newspaper-reading public in Britain and in its empire” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 10</a>) Again, the interest of keeping their economy strong through their colonial empire</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=10&amp;annotation=T22JWX4W">Go to annotation</a>“he owners of a cargo ship could communicate with its captain whenever it reached a harbor that was linked to the global telegraph network and direct it from port to port according to the latest information about prices and supplies” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 10</a>) The ability to make shipping more efficient led to more profits.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=11&amp;annotation=IICW7N3E">Go to annotation</a>“. Nations with colonies needed cables to maintain control of their "men-on-the-spot," not all of whom appreciated the supervision. This demand grew especially urgent in times of crisis, as we have seen in the case of the Sepoy Rebellion in Indi” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 11</a>) This reading is really stressing the importance of colonial empires in the laying of these cables.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=11&amp;annotation=JS9V4F2Z">Go to annotation</a>“Such communications were often fraught with difficulties, for foreign offices generally operated on tight budgets that did not permit extensive use of the telegraph. Yet they were often forced to use cables in order to keep pace with the pressure of public opinion aroused by the p” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 11</a>) A balance of making the most of your dollar and keeping up appearances.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=11&amp;annotation=Y3G4W6WE">Go to annotation</a>“ue. And when war broke out, as we shall see, cables proved to be powerful weapo” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 11</a>) I alluded to this earlier with how communication wins wars.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=12&amp;annotation=H58KNEKC">Go to annotation</a>“British cables extended around Africa and Asia and had more than enough capacity to handle whatever traffic other nations' traders, shippers, and colonial officials could generate” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 12</a>) All that money Britian poured into the RND of these cables are finally paying off.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=12&amp;annotation=CIRMHNYS">Go to annotation</a>“C&amp;M, manufactured two-thirds of the cables laid in the nineteenth century and almost half those laid after 1900” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 12</a>) monopoly</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=12&amp;annotation=RZ7XUBE7">Go to annotation</a>“the end of the century, Germany was fully competitive in the manufacture of electric equipment, cables, and cable ships, and German operating companies ceased relying on TC&amp;M and other British suppliers.” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 12</a>) This could be giving German's a sense of nationalism, of them not having to rely on other countries</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=13&amp;annotation=NACWW6JE">Go to annotation</a>“e, "This exceedingly long life has the inevitable consequence that a cable network must always mainly consist of cables which are technically out of d” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 13</a>) The longevity of these cables will be its own demise, since Britian laid their cables first theirs may soon become old and slow.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=13&amp;annotation=PT456MI6">Go to annotation</a>“."28 In order to avoid technological innovations that would render their costly investments obsolete, the cable companies restricted the entry of competitors into the market by exclusive concessions or ca” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 13</a>) Wanting to keep their monopoly by hindering competition, something we still see in the modern day.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=14&amp;annotation=8SBX5CDG">Go to annotation</a>“The first, and weakest, challenger was Franc” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 14</a>) A new challenger Approaches!</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=14&amp;annotation=AXNFC5I5">Go to annotation</a>“response, the Anglo-American Company used its considerable reserves to buy half its competitor's shares and force it into the joint purs” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 14</a>) More monopoly behavior, since there werent any global laws on this tactics it was extremely hard for a small competitor to become notable without being bought out.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=PWBRCIBS">Go to annotation</a>“st. In response, Anglo-American lowered its rates by 50 percent, then by 84 perc” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>) Looking at this from a consumer perspective in a short term view it must be great, being able to pay 80% of the original price must have been good. But, looking at the business side, they just attracted new customers and as soon as the war is over they can just raise prices freely.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=ZS5K8QD4">Go to annotation</a>“t. In response, Anglo-American lowered its rates by 50 percent, then by 84 perc” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>) Imagine if a big gas company did this today, there would be outrage from the other gas stations.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=9DSU85ZC">Go to annotation</a>“nt. While Anglo-American had ample reserves, the price war brought PQ close to bankruptcy, canceled its hopes of laying a second cable, and forced it into the cartel as a dependent of Anglo-America” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=N6LM4QJJ">Go to annotation</a>“r price w” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>) seeing this term frequently, its like a proxy war for companies.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=5WVVRI5N">Go to annotation</a>“, during which rates dropped 50 percent or mor” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>) Seeing all these rate drops reminds me of what Uber did. They started off making their rides super cheap and actually losing money to as soon as they had the majority of the market they raised prices substantially, which everyone was forced to accept because there is minimal competition in the ride share space.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=ZFS3WQF7">Go to annotation</a>“s. By 1887, when Commercial Cable had obtained 50 percent of the traffic, the two cartels came to an agreement and fixed their pric” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>) Finally someone who could challange the Anglo-American monopoly! (Although a duopoly is not much better).</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=15&amp;annotation=52EKL72Z">Go to annotation</a>“s. Henceforth, there was a duopoly on the Atlanti” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 15</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=16&amp;annotation=MJMTQVK4">Go to annotation</a>“Faced with mounting deficits, it merged with another small company, the Societe Fran,aise des Telegraphes Sous-Marins, to form the Compagnie Francaise des Cables Telegraphiques, or CFCT, in ?189” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 16</a>) The French do not give up.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=16&amp;annotation=QT6EXV9K">Go to annotation</a>“Yet, geographically, the Germans were at a distinct disadvantage” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 16</a>) communications could be another reason why germany wanted to expand.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=17&amp;annotation=YWHELXSU">Go to annotation</a>“res. The British government, which had hitherto welcomed all cable companies, rejected the German request, citing an agreement, signed by Britain and Germany in 1888, that all Anglo-German traffic would pass through jointly owned” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 17</a>)</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=17&amp;annotation=8Q4JQ6YC">Go to annotation</a>“ain. In fact, the real reason for the refusal was that the British government wished to prevent the Azores from becoming a rival cable node for the all-important transatlantic traf” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 17</a>) More monopoly behavior. The laying of telegraph lines has essentially become a political and economical war.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=17&amp;annotation=VUKXZIQS">Go to annotation</a>“the A” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 17</a>) region in portugal</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=18&amp;annotation=W8HXPBDV">Go to annotation</a>“DAT formed an alliance with Commercial Cable. Each company would lay a cable from the Azores to New York, they would split the traffic, and DAT would gain access to the Postal Telegraph Company's network of telegraph offices” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 18</a>) great deal for DAT a new comer in the industry</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=18&amp;annotation=ZFX22IF6">Go to annotation</a>“Germany now had what it had sought for a decade: communications with North America independent of Great Britain.3” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 18</a>) I wonder how useful this is going to be in WW1 for Germany.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=18&amp;annotation=XQMUXLJC">Go to annotation</a>“As Table 1 indicates, in 1892 two-thirds of the world's cables (by length) belonged to Great Britain, and almost all of them to British firm” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 18</a>) Even though new competition emerged, the brits still held a dominance in the industry</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=19&amp;annotation=JJAQCUCA">Go to annotation</a>“ises, and Pender was able to raise ?1.2 million without difficulty. In the years 1868 to 1870, Pender founded a series of companies: the Marseilles, Algiers, and Malta Telegraph Company; the AngloMediterranean Telegraph Company (to connect Malta with Alexandria); the Falmouth, Gibraltar, and Malta Telegraph Company (from England to Malta); and the British Indian Submarine Telegraph Company (from Su” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 19</a>) Smart, it gives the illusion of competition but in reality its all owned by the same guy. Similar to a lot of the major brands like Nestle.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=19&amp;annotation=34RZHNLA">Go to annotation</a>“In the years 1868 to 1870, Pender founded a series of companies: the Marseilles, Algiers, and Malta Telegraph Company; the AngloMediterranean Telegraph Company (to connect Malta with Alexandria); the Falmouth, Gibraltar, and Malta Telegraph Company (from England to Malta); and the British Indian Submarine Telegraph Company (from Su” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 19</a>) This is similar to how major real estate companies handle their properties. They make a company for each individual property so if someone sues they can only get money from that place.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=20&amp;annotation=PJR3ICVQ">Go to annotation</a>“es. Finally, in 1885, he founded the African Direct Telegraph Company to serve Britain's fast-expanding West African colonial emp” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 20</a>) more colonialism</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=21&amp;annotation=7AKQUIMS">Go to annotation</a>“, in 1902, the governments of Britain, Canada, Australia, and New Zealand formed a joint enterprise, the Pacific Cable Board, to lay a transpacific cable and thereby complete what was called the "All-Red Route," a telegraphic link around the world entirely in British hands.40” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 21</a>) again to strengthen their colonial ties.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=21&amp;annotation=5VYFWETC">Go to annotation</a>“sting. But it was also a consequence of the British Empire's possessing islands and colonies conveniently located to provide both landing sites and markets for telegraphic services as well as having the largest merchant marine in” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 21</a>) again, the idea of colonialism that further enhanced the British's network</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=21&amp;annotation=KW973GZY">Go to annotation</a>“eir co” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 21</a>) dutch east indies, Germany's claims in africa</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=22&amp;annotation=SNBVEC6N">Go to annotation</a>“Great Northern Telegraph Company to connect Denmark with Norway, England, and Russia” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 22</a>) the nordic coutries</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=22&amp;annotation=B7ISCGJE">Go to annotation</a>“In 1872, the Great Northern China and Japan Extension Telegraph Company laid cables connecting Vladivostok, Nagasaki, Yokohama, Shanghai, and Hong Kong. W” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 22</a>) noticing a pattern of clusters of countries connecting themselves then joining the world, the Denmark, Norway,Russia and the eastern one are examples.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=22&amp;annotation=8TFWQVDS">Go to annotation</a>“xenophobic” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 22</a>) dislike of or prejudice against people from other countries.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=22&amp;annotation=VN8LF3GG">Go to annotation</a>“. In the Spanish-American War, the U.S. Navy cut several British-owned cables in Cuban waters” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 22</a>) again, the emergence of the idea that information is key in war.</p>
+<p><a href="zotero://open-pdf/library/items/6QWVLTBD?page=23&amp;annotation=2PBWEV3W">Go to annotation</a>“France's first priority was always a cable to Algeria, which was close to France and had many European settlers. The close human, commercial, military, and administrative ties between France and Algeria generated enough telegraph traffic to warrant several ca” (<a href="zotero://select/library/items/BCA2HTNN">Headrick and Griset, 2001, p. 23</a>) very important cable.</p>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
