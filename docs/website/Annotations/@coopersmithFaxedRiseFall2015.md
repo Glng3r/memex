@@ -145,12 +145,7 @@ alias: ["Faxed"]
 >
 > [Page 15](zotero://open-pdf/library/items/CCF4QASF?page=15) [[2023-03-05#3:23 pm]]
 
-> [!quote|#a28ae5] Highlight
-> Given the opportunity to send exact reproductions of their messages, however, most users continued sending less-expensive regular telegrams with codes and ciphers providing security and authenticity
->
->> Its like a cipher baked into the morse code. To verify the sender of the message.
->
-> [Page 15](zotero://open-pdf/library/items/CCF4QASF?page=15) [[2023-03-05#3:24 pm]]
+[[Digital Signatures in the telegraph]]
 
 > [!quote|#a28ae5] Highlight
 > [it] is susceptible of great improvements and may eventually be of important service

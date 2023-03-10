@@ -11,4 +11,4 @@ Related Links:
 [[@coopersmithFaxedRiseFall2015 source]]
 [[Emergence]] [[future media]] [[Medium is important]] [[definition of media]]
 This evolves the idea of the importance of context [[Context of the Work]].
-
+[[medium is a carrier]]

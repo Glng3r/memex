@@ -14,7 +14,7 @@ Couple of notes of changes I made with the feedback:
 - [[@headrickSubmarineTelegraphCables2001 source]]
 - [[@standageVictorianInternetRemarkable1998 source]]
 - [[@millerWiresWildernessStory2004 source]]
-## Atomic Notes:
+### Atomic Notes:
 ### Telegraph
 - [[American monopoly]]
 - [[Britians Motivation for Telegraphy]]
@@ -28,7 +28,7 @@ Couple of notes of changes I made with the feedback:
 - [[The All Canadian Telegraph]]
 - [[The why of the Yukon Telegraph]]
 - [[Chapter 5 Wiring the world (page 74)]]
-- 
+- [[Digital Signatures in the telegraph]]
 ### Telephone
 - [[Business differences for the telephone]]
 - [[Collapsing space time with the telephone]]
@@ -39,7 +39,7 @@ Couple of notes of changes I made with the feedback:
 - [[Turnaround of Bell's Ideals]]
 - [[Ciphers Hold Power in war]]
 
-## Ideas
+### Ideas
 - [[Economics govern techonolgy]]
 - [[Accessibility with the telegraph]]
 - [[Thoughts of the future using Telegraphs]]

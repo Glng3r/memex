@@ -21,5 +21,5 @@ Morse code is a very simple kind of cipher. It is very similar to the substituti
 
 ### Related Links
 
-This is a very simple kind of a [[Substitution Cipher]].
-[[Linguistics and meaning]]
+This is a very simple kind of [[Substitution Cipher]].
+[[Linguistics and meaning]] [[Medium is important]]

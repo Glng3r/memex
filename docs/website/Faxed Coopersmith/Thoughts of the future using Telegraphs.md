@@ -6,3 +6,4 @@ tags: #memex2 #Fax #idea
 
 Related:
 [[@coopersmithFaxedRiseFall2015]] 
+[[medium is a carrier]]

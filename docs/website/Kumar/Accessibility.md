@@ -12,4 +12,6 @@ projects::[[]]
 I think a lot of the advancements in library technology has been to make knowledge more accessible to the greater population as we advance throughout the ages and the literacy rate increases. Most of the focus on this happened when OSAP was released, as they added features to make it easier to use, like the GUI.
 
 Also, the multiple international conference led the way for representation for the blind, adding sound recordings to thecataloguess. This is a big change as it helps people with disabilities.
+
+[Rowan's Memex](https://rowanegg.github.io/thememexofegg/Accessibility.html) goes deeper into this idea of accessibility with libraries, exploring how libraries were once only for elite nobility because only so few people were literate.
 [[@shivkumarClayTabletsWeb2013 source]]

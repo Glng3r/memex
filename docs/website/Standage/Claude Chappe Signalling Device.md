@@ -31,4 +31,4 @@ It lies on the users' ability to quickly decipher each position in a big code bo
 ### Related Links
 
 [[Substitution Cipher]]
-It wasn't very accessible other than to the government because you needed to be well trained in using it and only people who did it for a living can operate them efficently. [[Accessibility with the telegraph]]
+It wasn't very accessible other than to the government because you needed to be well trained in using it and only people who did it for a living can operate them efficently. [[Accessibility with the telegraph]] 
