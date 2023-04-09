@@ -19,3 +19,4 @@ Quote found on page 7.
 
 ### Related Links
 
+[[Emergence of the telegraph]]

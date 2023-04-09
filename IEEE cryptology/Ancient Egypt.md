@@ -12,7 +12,7 @@ The most basic cypher called the substitution cypher goes all the way back to ti
 ---
 ### Citational Information
 
-Link to the originating literature note.
+M. Rathidevi, R. Yaminipriya and S. V. Sudha, "Trends of cryptography stepping from ancient to modern," 2017 International Conference on Innovations in Green Energy and Healthcare Technologies (IGEHT), Coimbatore, India, 2017, pp. 1-9, doi: 10.1109/IGEHT.2017.8094107.
 
 ---
 

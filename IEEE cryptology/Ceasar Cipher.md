@@ -11,11 +11,11 @@ The IEEE brings up the Caesar cipher; it was created in ancient Rome by Julius C
 [[SubstitutionCipher.png]]
 It wasn't very complicated, as it just switched the numbers around by a predefined amount.
 
-
+A video tutorial of how to do a Caesar cipher: <iframe width="560" height="315" src="https://www.youtube.com/embed/o6TPx1Co_wg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ---
 ### Citational Information
-
+M. Rathidevi, R. Yaminipriya and S. V. Sudha, "Trends of cryptography stepping from ancient to modern," 2017 International Conference on Innovations in Green Energy and Healthcare Technologies (IGEHT), Coimbatore, India, 2017, pp. 1-9, doi: 10.1109/IGEHT.2017.8094107.
 
 ---
 
