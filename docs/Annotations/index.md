@@ -1,1 +1,0 @@
-in this folder is all the imported annotations from the readings. While not all of them have been made notes the majority of the highlights do contain thoughts I had while reading them so it would be a good idea to go through those breifly. Those are cool ideas but not big enough for its own atomic note.
