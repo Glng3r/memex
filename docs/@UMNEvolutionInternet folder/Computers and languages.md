@@ -6,7 +6,7 @@
 tags: #memex3
 links:  
 - broader terms (BT):  [[The Telegraph for Asia]] [[Medium is important]] 
-- narrower terms (NT):  
+- narrower terms (NT):  [[first computer protocol]] 
 - related terms (RT):  [[Linguistics and meaning]]
 - used for (UF) or aliases:  
 connected ideas:  

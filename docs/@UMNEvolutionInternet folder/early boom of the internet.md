@@ -1,7 +1,7 @@
 tags: #memex3 #atomic #Internet 
 links:  
-- broader terms (BT):   [[policing media]] 
-- narrower terms (NT):  
+- broader terms (BT):   [[policing media]] [[first computer protocol]] 
+- narrower terms (NT):  [[Standardization of websites]]
 - related terms (RT):  [[The why of the Yukon Telegraph]]
 - used for (UF) or aliases:  
 connected ideas:  

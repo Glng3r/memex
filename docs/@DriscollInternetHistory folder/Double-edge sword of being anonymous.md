@@ -1,7 +1,7 @@
 
 tags: #memex3 #atomic 
 links:  
-- broader terms (BT):  [[Accelerating forces other than military]] [[Neccessities for adoption computers]] [[Medium is important]] 
+- broader terms (BT):  [[Neccessities for adoption computers]] [[Medium is important]] 
 - narrower terms (NT):  [[Specificity is key]] 
 - related terms (RT):  
 - used for (UF) or aliases:  

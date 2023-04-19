@@ -25,6 +25,8 @@ projects::[[]]
 
 ### Related Links
 
-[[Britians Motivation for Telegraphy]] [[Threat of the soviet Union]] [[The why of the Yukon Telegraph]]
+[[Britians Motivation for Telegraphy]] [[Threat of the soviet Union]] [[The why of the Yukon Telegraph]] 
+The start of our internet has nothing to do with military. [[early boom of the internet]]
+
 
 
