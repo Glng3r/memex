@@ -1,0 +1,2232 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../%40UMNEvolutionInternet/" rel="prev"/>
+<link href="../%40denningScienceComputingARPANET1989/" rel="next"/>
+<link href="../../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>Anatomy of an AI System - Eric Desrosiers Memex</title>
+<link href="../../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="green" data-md-color-primary="blue" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#anatomy-of-an-ai-system">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Eric Desrosiers Memex" class="md-header__button md-logo" data-md-component="logo" href="../../.." title="Eric Desrosiers Memex">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Eric Desrosiers Memex
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Anatomy of an AI System
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="blue" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="yellow" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="brown" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Eric Desrosiers Memex" class="md-nav__button md-logo" data-md-component="logo" href="../../.." title="Eric Desrosiers Memex">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Eric Desrosiers Memex
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../..">
+        Home
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../0_Final%20Journey_1/">
+        0 Final Journey 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../0_Final%20Journey_2/">
+        0 Final Journey 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Changelog/">
+        Changelog
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MARCH%2029%20AI%20ESSAY/">
+        MARCH 29 AI ESSAY
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Map%20of%20Content/">
+        Map of Content
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_7" type="checkbox"/>
+<label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          @DriscollInternetHistory folder
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_7_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_7">
+<span class="md-nav__icon md-icon"></span>
+          @DriscollInternetHistory folder
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40DriscollInternetHistory%20folder/%40DriscollInternetHistory%20source/">
+        @DriscollInternetHistory source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40DriscollInternetHistory%20folder/Cyberbullying/">
+        Cyberbullying
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40DriscollInternetHistory%20folder/Double-edge%20sword%20of%20being%20anonymous/">
+        Double edge sword of being anonymous
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40DriscollInternetHistory%20folder/Peer-to-Peer%20network/">
+        Peer to Peer network
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40DriscollInternetHistory%20folder/being%20anonymous%20on%20the%20internet/">
+        Being anonymous on the internet
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_8" type="checkbox"/>
+<label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          @UMNEvolutionInternet folder
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_8_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_8">
+<span class="md-nav__icon md-icon"></span>
+          @UMNEvolutionInternet folder
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/%40UMNEvolutionInternet%20source/">
+        @UMNEvolutionInternet source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Advertisements%20in%20media/">
+        Advertisements in media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Computers%20and%20languages/">
+        Computers and languages
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Importance%20of%20Data%20Integrity/">
+        Importance of Data Integrity
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Manipulation/">
+        Manipulation
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Microsoft%27s%20monopoly/">
+        Microsoft's monopoly
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Neccessities%20for%20adoption%20computers/">
+        Neccessities for adoption computers
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/Standardization%20of%20websites/">
+        Standardization of websites
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/What%20is%20an%20IP%20address/">
+        What is an IP address
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/benefits%20of%20distrubuted%20networks/">
+        Benefits of distrubuted networks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40UMNEvolutionInternet%20folder/early%20boom%20of%20the%20internet/">
+        Early boom of the internet
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_9" type="checkbox"/>
+<label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+          @crawfordAnatomyAI folder
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_9_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_9">
+<span class="md-nav__icon md-icon"></span>
+          @crawfordAnatomyAI folder
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/%40crawfordAnatomyAI%20source/">
+        @crawfordAnatomyAI source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/Human%20Knowledge/">
+        Human Knowledge
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/Monopolies%20in%20the%20modern%20World/">
+        Monopolies in the modern World
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/Rapid%20advancement%20in%20complexity/">
+        Rapid advancement in complexity
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/Standardizing%20shipping/">
+        Standardizing shipping
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/Taking%20power%20from%20the%20User/">
+        Taking power from the User
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/monetization%20of%20humans/">
+        Monetization of humans
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40crawfordAnatomyAI%20folder/what%20it%20takes%20to%20make%20Alexa/">
+        what it takes to make Alexa
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_10" type="checkbox"/>
+<label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+          @denningScienceComputingARPANET1989 folder
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_10_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_10">
+<span class="md-nav__icon md-icon"></span>
+          @denningScienceComputingARPANET1989 folder
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40denningScienceComputingARPANET1989%20folder/%40denningScienceComputingARPANET1989%20source/">
+        @denningScienceComputingARPANET1989 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40denningScienceComputingARPANET1989%20folder/Emergence%20of%20the%20web/">
+        Emergence of the web
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40denningScienceComputingARPANET1989%20folder/Fear%20of%20Digitilization/">
+        Fear of Digitilization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40denningScienceComputingARPANET1989%20folder/Tipping%20points%20of%20widespread%20adoption/">
+        Tipping points of widespread adoption
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40denningScienceComputingARPANET1989%20folder/first%20computer%20protocol/">
+        First computer protocol
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_11" type="checkbox"/>
+<label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+          @lukasikWhyArpanetWas2011 folder
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_11_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_11">
+<span class="md-nav__icon md-icon"></span>
+          @lukasikWhyArpanetWas2011 folder
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40lukasikWhyArpanetWas2011%20folder/%40lukasikWhyArpanetWas2011%20source/">
+        @lukasikWhyArpanetWas2011 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40lukasikWhyArpanetWas2011%20folder/Accelerating%20forces%20other%20than%20military/">
+        Accelerating forces other than military
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40lukasikWhyArpanetWas2011%20folder/Computers%20Support%20Humans/">
+        Computers Support Humans
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../%40lukasikWhyArpanetWas2011%20folder/Threat%20of%20the%20soviet%20Union/">
+        Threat of the soviet Union
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+          Annotations
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_12_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_12">
+<span class="md-nav__icon md-icon"></span>
+          Annotations
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../">
+        Index
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40coopersmithFaxedRiseFall2015/">
+        @coopersmithFaxedRiseFall2015
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40dooleyIntroductionRevolutionaryCipher2018/">
+        @dooleyIntroductionRevolutionaryCipher2018
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40gitelmanMediaHistoricalSubjects2006/">
+        @gitelmanMediaHistoricalSubjects2006
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40headrickSubmarineTelegraphCables2001/">
+        @headrickSubmarineTelegraphCables2001
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40macdougallPeopleNetworkPolitical2013/">
+        @macdougallPeopleNetworkPolitical2013
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40millerWiresWildernessStory2004/">
+        @millerWiresWildernessStory2004
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40rathideviTrendsCryptographyStepping2017/">
+        @rathideviTrendsCryptographyStepping2017
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40shivkumarClayTabletsWeb2013/">
+        @shivkumarClayTabletsWeb2013
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%40standageVictorianInternetRemarkable1998/">
+        @standageVictorianInternetRemarkable1998
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../Annotations%20On%20Taking%20Notes/">
+        On Taking Notes | Perspectives on History | AHA
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_12_12" type="checkbox"/>
+<label class="md-nav__link" for="__nav_12_12" id="__nav_12_12_label" tabindex="0">
+          Memex 3
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_12_12_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_12_12">
+<span class="md-nav__icon md-icon"></span>
+          Memex 3
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%40DriscollInternetHistory/">
+        The Early Part of Internet History That People Don’t Talk About
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%40UMNEvolutionInternet/">
+        11.2 The Evolution of the Internet
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Anatomy of an AI System
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Anatomy of an AI System
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_1">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_2">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_3">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-takes-to-make-alexa">
+    what it takes to make Alexa
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_4">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_5">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_6">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monetization-of-humans">
+    monetization of humans
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_7">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_8">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_9">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_10">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#taking-power-from-the-user">
+    Taking power from the User
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_11">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_12">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_13">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_14">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_15">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_16">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_17">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_18">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_19">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_20">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_21">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_22">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standardizing-shipping">
+    Standardizing shipping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_23">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_24">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_25">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_26">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_27">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_28">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_29">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_30">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_31">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monopolies-in-the-modern-world">
+    Monopolies in the modern World
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_32">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_33">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_34">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_35">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_36">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_37">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_38">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_39">
+    Source
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%40denningScienceComputingARPANET1989/">
+        @denningScienceComputingARPANET1989
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../%40lukasikWhyArpanetWas2011/">
+        @lukasikWhyArpanetWas2011
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_13" type="checkbox"/>
+<label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+          Connections with other memex's
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_13_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_13">
+<span class="md-nav__icon md-icon"></span>
+          Connections with other memex's
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Connections%20with%20other%20memex%27s/Benefits%20of%20connections/">
+        Benefits of connections
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Connections%20with%20other%20memex%27s/Destroying%20the%20planet/">
+        Destroying the planet
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Connections%20with%20other%20memex%27s/Digital%20Signatures%20in%20the%20telegraph/">
+        Digital Signatures in the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Connections%20with%20other%20memex%27s/Politics%20of%20the%20internet/">
+        Politics of the internet
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_14" type="checkbox"/>
+<label class="md-nav__link" for="__nav_14" id="__nav_14_label" tabindex="0">
+          Dooley
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_14_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_14">
+<span class="md-nav__icon md-icon"></span>
+          Dooley
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Dooley/%40dooleyIntroductionRevolutionaryCipher2018%20source/">
+        @dooleyIntroductionRevolutionaryCipher2018 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Dooley/Steganography%20Vs%20Cryptology/">
+        Steganography Vs Cryptology
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Dooley/Substitution%20Cipher/">
+        Substitution Cipher
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Dooley/Transposition%20Cipher/">
+        Transposition Cipher
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_15" type="checkbox"/>
+<label class="md-nav__link" for="__nav_15" id="__nav_15_label" tabindex="0">
+          Faxed Coopersmith
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_15_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_15">
+<span class="md-nav__icon md-icon"></span>
+          Faxed Coopersmith
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Faxed%20Coopersmith/%40coopersmithFaxedRiseFall2015%20source/">
+        @coopersmithFaxedRiseFall2015 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Faxed%20Coopersmith/Emergence%20of%20the%20modern%20Newspaper/">
+        Emergence of the modern Newspaper
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Faxed%20Coopersmith/The%20Telegraph%20for%20Asia/">
+        The Telegraph for Asia
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Faxed%20Coopersmith/Thoughts%20of%20the%20future%20using%20Telegraphs/">
+        Thoughts of the future using Telegraphs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Faxed%20Coopersmith/Using%20a%20fax%20machine/">
+        Using a fax machine
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_16" type="checkbox"/>
+<label class="md-nav__link" for="__nav_16" id="__nav_16_label" tabindex="0">
+          Gitelman
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_16_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_16">
+<span class="md-nav__icon md-icon"></span>
+          Gitelman
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/%40gitelmanMediaHistoricalSubjects2006%20source/">
+        @gitelmanMediaHistoricalSubjects2006 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/Emergence/">
+        Emergence
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/Medium%20is%20important/">
+        Medium is important
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/Opposing%20policing%20media/">
+        Opposing policing media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/Specificity%20is%20key/">
+        Specificity is key
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/definition%20of%20media/">
+        Definition of media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/future%20media/">
+        Future media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/medium%20is%20a%20carrier/">
+        Medium is a carrier
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/policing%20media/">
+        Policing media
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Gitelman/thinking%20back%20on%20old%20media/">
+        Thinking back on old media
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_17" type="checkbox"/>
+<label class="md-nav__link" for="__nav_17" id="__nav_17_label" tabindex="0">
+          Headrick and Griset
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_17_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_17">
+<span class="md-nav__icon md-icon"></span>
+          Headrick and Griset
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Headrick%20and%20Griset/%40headrickSubmarineTelegraphCables2001%20source/">
+        @headrickSubmarineTelegraphCables2001 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Headrick%20and%20Griset/Accessibility%20with%20the%20telegraph/">
+        Accessibility with the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Headrick%20and%20Griset/American%20monopoly/">
+        American monopoly
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Headrick%20and%20Griset/Britians%20Motivation%20for%20Telegraphy/">
+        Britians Motivation for Telegraphy
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Headrick%20and%20Griset/British%20Telegraph%20Monopoly/">
+        British Telegraph Monopoly
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_18" type="checkbox"/>
+<label class="md-nav__link" for="__nav_18" id="__nav_18_label" tabindex="0">
+          IEEE cryptology
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_18_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_18">
+<span class="md-nav__icon md-icon"></span>
+          IEEE cryptology
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/%40rathideviTrendsCryptographyStepping2017%20source/">
+        @rathideviTrendsCryptographyStepping2017 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/Ancient%20Egypt/">
+        Ancient Egypt
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/Ceasar%20Cipher/">
+        Ceasar Cipher
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/Ciphers%20Hold%20Power%20in%20war/">
+        Ciphers Hold Power in war
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/Emergence%20of%20the%20telegraph/">
+        Emergence of the telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../IEEE%20cryptology/Syctale%20tool/">
+        Syctale tool
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_19" type="checkbox"/>
+<label class="md-nav__link" for="__nav_19" id="__nav_19_label" tabindex="0">
+          Kumar
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_19_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_19">
+<span class="md-nav__icon md-icon"></span>
+          Kumar
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/%40shivkumarClayTabletsWeb2013%20source/">
+        @shivkumarClayTabletsWeb2013 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Accessibility%20with%20library%20technologies/">
+        Accessibility with library technologies
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Computer-based%20Catalogs/">
+        Computer based Catalogs
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Development%20of%20Catalogue%20codes/">
+        Development of Catalogue codes
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Early%20OPAC/">
+        Early OPAC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/HCI%20with%20OPAC/">
+        HCI with OPAC
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Historical%20Developments%20of%20Library%20Systems/">
+        Historical Developments of Library Systems
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Later%20OPAC%20upgrades/">
+        Later OPAC upgrades
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/Post%20Paris%20Conference/">
+        Post Paris Conference
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Kumar/The%20dictionary%20catalog/">
+        The dictionary catalog
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_20" type="checkbox"/>
+<label class="md-nav__link" for="__nav_20" id="__nav_20_label" tabindex="0">
+          MacDougall People's Network
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_20_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_20">
+<span class="md-nav__icon md-icon"></span>
+          MacDougall People's Network
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/%40macdougallPeopleNetworkPolitical2013%20source/">
+        @macdougallPeopleNetworkPolitical2013 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/Ambition/">
+        Ambition
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/Business%20differences%20for%20the%20telephone/">
+        Business differences for the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/Collapsing%20space%20time%20with%20the%20telephone/">
+        Collapsing space time with the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/The%20alliance%20of%20Bell%20and%20Western%20Union/">
+        The alliance of Bell and Western Union
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/Turnaround%20of%20Bell%27s%20Ideals/">
+        Turnaround of Bell's Ideals
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/privitizing%20the%20telephone/">
+        Privitizing the telephone
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../MacDougall%20People%27s%20Network/segregation%20with%20telephone/">
+        Segregation with telephone
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_21" type="checkbox"/>
+<label class="md-nav__link" for="__nav_21" id="__nav_21_label" tabindex="0">
+          My Own Ideas
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_21_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_21">
+<span class="md-nav__icon md-icon"></span>
+          My Own Ideas
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Accessibilty%20with%20the%20modern%20computer/">
+        Accessibilty with the modern computer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Early%20Development%20of%20Technology/">
+        Early Development of Technology
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Economics%20govern%20techonolgy/">
+        Economics govern techonolgy
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Linguistics%20and%20meaning/">
+        Linguistics and meaning
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Urban%20Myth%20of%20telegraph/">
+        Urban Myth of telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../My%20Own%20Ideas/Webcrawlers-%20April%203%20Lecture/">
+        Webcrawlers  April 3 Lecture
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_22" type="checkbox"/>
+<label class="md-nav__link" for="__nav_22" id="__nav_22_label" tabindex="0">
+          Standage
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_22_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_22">
+<span class="md-nav__icon md-icon"></span>
+          Standage
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/%40standageVictorianInternetRemarkable1998%20source/">
+        @standageVictorianInternetRemarkable1998 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/Chapter%205%20Wiring%20the%20world%20%28page%2074%29/">
+        Chapter 5 Wiring the world (page 74)
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/Claude%20Chappe%20Signalling%20Device/">
+        Claude Chappe Signalling Device
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/Morse%20Code/">
+        Morse Code
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/Morse%27s%20Inspiration%20pg.25-27/">
+        Morse's Inspiration pg.25 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Standage/Stagner%20rough%20notes%20and%20observations./">
+        Stagner rough notes and observations.
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_23" type="checkbox"/>
+<label class="md-nav__link" for="__nav_23" id="__nav_23_label" tabindex="0">
+          Walkowitz
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_23_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_23">
+<span class="md-nav__icon md-icon"></span>
+          Walkowitz
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/Context%20of%20the%20Work/">
+        Context of the Work
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/Organizing%20information/">
+        Organizing information
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/Reaserching%20the%20topic/">
+        Reaserching the topic
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/Walkowitz%20Source%20Note/">
+        Walkowitz Source Note
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/What%20you%20Write/">
+        What you Write
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../Walkowitz/going%20prepared/">
+        Going prepared
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_24" type="checkbox"/>
+<label class="md-nav__link" for="__nav_24" id="__nav_24_label" tabindex="0">
+          Tag accessible
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_24_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_24">
+<span class="md-nav__icon md-icon"></span>
+          Tag accessible
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tag%20accessible/code%20book/">
+        Code book
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tag%20accessible/colonialism/">
+        Colonialism
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tag%20accessible/factorial/">
+        Factorial
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../tag%20accessible/sui%20generis/">
+        Sui generis
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_25" type="checkbox"/>
+<label class="md-nav__link" for="__nav_25" id="__nav_25_label" tabindex="0">
+          Wires in the wilderness
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_25_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_25">
+<span class="md-nav__icon md-icon"></span>
+          Wires in the wilderness
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../wires%20in%20the%20wilderness/%40millerWiresWildernessStory2004%20source/">
+        @millerWiresWildernessStory2004 source
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../wires%20in%20the%20wilderness/Starting%20off%20small/">
+        Starting off small
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../wires%20in%20the%20wilderness/The%20All%20Canadian%20Telegraph/">
+        The All Canadian Telegraph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../../wires%20in%20the%20wilderness/The%20why%20of%20the%20Yukon%20Telegraph/">
+        The why of the Yukon Telegraph
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_1">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_2">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_3">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#what-it-takes-to-make-alexa">
+    what it takes to make Alexa
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_4">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_5">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_6">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monetization-of-humans">
+    monetization of humans
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_7">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_8">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_9">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_10">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#taking-power-from-the-user">
+    Taking power from the User
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_11">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_12">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_13">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_14">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_15">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_16">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_17">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_18">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_19">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_20">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_21">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_22">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#standardizing-shipping">
+    Standardizing shipping
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_23">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_24">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_25">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_26">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_27">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_28">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_29">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_30">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_31">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#monopolies-in-the-modern-world">
+    Monopolies in the modern World
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_32">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_33">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_34">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_35">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_36">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_37">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_38">
+    Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#source_39">
+    Source
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="anatomy-of-an-ai-system">Anatomy of an AI System<a class="headerlink" href="#anatomy-of-an-ai-system" title="Permanent link">¶</a></h1>
+<p>URL: https://anatomyof.ai/</p>
+<p>AI is something we use frequently everyday, even Siri has AI components to it.
+—<a href="#"></a></p>
+<h2 id="source">Source<a class="headerlink" href="#source" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>A brief command and a response is the most common form of engagement with this consumer voice-enabled AI device<sup id="fnref38:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>The How
+—<a href="#"></a></p>
+<h2 id="source_1">Source<a class="headerlink" href="#source_1" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>We start with an outline: an exploded view of a planetary system across three stages of birth, life and death, accompanied by an essay in 21 parts. Together, this becomes an anatomical map of a single AI system<sup id="fnref37:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We have no way of knowing how the vast web of technologies work in order to have the Alexa in the first place. Its all hidden from the consumer, in programming we call this encapsulation.
+—<a href="#"></a></p>
+<h2 id="source_2">Source<a class="headerlink" href="#source_2" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>But even the shiny design options maintain a kind of blankness: nothing will alert the owner to the vast network that subtends and drives its interactive capacities.<sup id="fnref36:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>How the AI learns and becomes better.
+—<a href="#"></a></p>
+<h2 id="source_3">Source<a class="headerlink" href="#source_3" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Is the same question uttered again? (Did the user feel heard?)
+                Was the question reworded? (Did the user feel the question was understood?)
+                Was there an action following the question? (Did the interaction result in a tracked response: a light turned on, a product purchased, a track played?<sup id="fnref35:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<h2 id="what-it-takes-to-make-alexa"><a href="../../../%40crawfordAnatomyAI%20folder/what%20it%20takes%20to%20make%20Alexa/">what it takes to make Alexa</a><a class="headerlink" href="#what-it-takes-to-make-alexa" title="Permanent link">¶</a></h2>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_4">Source<a class="headerlink" href="#source_4" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>grey gold<sup id="fnref34:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We are essentially destroying the planet so we can have these luxury commodities. If this gets out of hand we will run out of resources completely.
+—<a href="#"></a></p>
+<h2 id="source_5">Source<a class="headerlink" href="#source_5" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>As Liam Young and Kate Davies observe, “your smart-phone runs on the tears and breast milk of a volcano. This landscape is connected to everywhere on the planet via the phones in our pockets; linked to each of us by invisible threads of commerce, science, politics and power.”<sup id="fnref33:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Its crazy to see how much work and materials goes into building an Alexa when not even a century ago telegraphs were considered super advanced. Looking at what it takes to build it makes the telegraph seem rudimentary (can possibly link to gitelman).
+—<a href="#"></a></p>
+<h2 id="source_6">Source<a class="headerlink" href="#source_6" title="Permanent link">¶</a></h2>
+<p><a href="../../../%40crawfordAnatomyAI%20folder/Rapid%20advancement%20in%20complexity/">Rapid advancement in complexity</a></p>
+<hr/>
+<h2 id="monetization-of-humans"><a href="../../../%40crawfordAnatomyAI%20folder/monetization%20of%20humans/">monetization of humans</a><a class="headerlink" href="#monetization-of-humans" title="Permanent link">¶</a></h2>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Our perspective makes a huge difference in how we view things.
+—<a href="#"></a></p>
+<h2 id="source_7">Source<a class="headerlink" href="#source_7" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>If you read our map from left to right, the story begins and ends with the Earth, and the geological processes of deep time. But read from top to bottom, we see the story as it begins and ends with a human<sup id="fnref32:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>The cultivation of thousands of years of human culture has led AI to be able to respond like a human.
+—<a href="#"></a></p>
+<h2 id="source_8">Source<a class="headerlink" href="#source_8" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>At the bottom of the map is another kind of human resource: the history of human knowledge and capacity, which is also used to train and optimize artificial intelligence systems. This is a key difference between artificial intelligence systems and other forms of consumer technology: they rely on the ingestion, analysis and optimization of vast amounts of human generated images, texts and videos.<sup id="fnref31:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Since humans are so unique compared to one another we cannot classify them under the same umbrella, this is a good thing for the AI because it has a wider variety of test data to improve itself. 
+—<a href="#"></a></p>
+<h2 id="source_9">Source<a class="headerlink" href="#source_9" title="Permanent link">¶</a></h2>
+<p><a href="../../../%40crawfordAnatomyAI%20folder/Human%20Knowledge/">Human Knowledge</a></p>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>cloud computing
+—<a href="#"></a></p>
+<h2 id="source_10">Source<a class="headerlink" href="#source_10" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The Echo is but an ‘ear’ in the home: a disembodied listening agent that never shows its deep connections to remote systems.<sup id="fnref30:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<h2 id="taking-power-from-the-user"><a href="../../../%40crawfordAnatomyAI%20folder/Taking%20power%20from%20the%20User/">Taking power from the User</a><a class="headerlink" href="#taking-power-from-the-user" title="Permanent link">¶</a></h2>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>could link to gitelman somehow.
+—<a href="#"></a></p>
+<h2 id="source_11">Source<a class="headerlink" href="#source_11" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Jussi Parikka suggests that we try to think of media not from Marshall McLuhan’s point of view – in which media are extensions of human senses
+                12
+                – but rather as an extension of Earth.
+                13
+                Media technologies should be understood in context of a geological process, from the creation and the transformation processes, to the movement of natural elements from which media are built. Reflecting upon media and technology as geological processes enables us to consider the profound depletion of non-renewable resources required to drive the technologies of the present moment.<sup id="fnref29:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Capitalism and the idea of making as much money as possible.
+—<a href="#"></a></p>
+<h2 id="source_12">Source<a class="headerlink" href="#source_12" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>This obsolescence cycle fuels the purchase of more devices, drives up profits, and increases incentives for the use of unsustainable extraction practices<sup id="fnref28:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_13">Source<a class="headerlink" href="#source_13" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>However, all the transformations and movements we depict are only the barest anatomical outline: beneath these connections lie many more layers of fractal supply chains, and exploitation of human and natural resources, concentrations of corporate and geopolitical power, and continual energy consumption.<sup id="fnref27:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Now more than ever has the disparity of wealth been shown, 63% of new wealth generated globally goes to only 1% of the  population. Its like a monopoly of the worlds finance (linkable)
+—<a href="#"></a></p>
+<h2 id="source_14">Source<a class="headerlink" href="#source_14" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>These processes create new accumulations of wealth and power, which are concentrated in a very thin social layer.<sup id="fnref26:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_15">Source<a class="headerlink" href="#source_15" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The ultimate triangle in our map, the production of the Amazon Echo unit itself, includes all of these levels of exploitation – from the bottom to the very top of Amazon Inc, a role inhabited by Jeff Bezos as CEO of Amazon. Like a pharaoh of ancient Egypt, he stands at the top of the largest pyramid of AI value extraction.<sup id="fnref25:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>These workers are being exploited by their governments minimal working rights, taken advantage of to squeeze every last dollar to please the shareholders. Making money for the corporation.
+—<a href="#"></a></p>
+<h2 id="source_16">Source<a class="headerlink" href="#source_16" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>According to research by Amnesty International, during the excavation of cobalt which is also used for lithium batteries of 16 multinational brands, workers are paid the equivalent of one US dollar per day for working in conditions hazardous to life and health, and were often subjected to violence, extortion and intimidation.<sup id="fnref24:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We are purposely kept unaware of what is going on so that the companies can keep making money, if people become aware of what is happening it will ruin a company's reputation.
+—<a href="#"></a></p>
+<h2 id="source_17">Source<a class="headerlink" href="#source_17" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>As Mark Graham writes, “contemporary capitalism conceals the histories and geographies of most commodities from consumers. Consumers are usually only able to see commodities in the here and now of time and space, and rarely have any opportunities to gaze backwards through the chains of production in order to gain knowledge about the sites of production, transformation, and distribution<sup id="fnref23:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>These supply lines are so complex that not even the corporations themselves know how bad the exploitation is.
+—<a href="#"></a></p>
+<h2 id="source_18">Source<a class="headerlink" href="#source_18" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>One illustration of the difficulty of investigating and tracking the contemporary production chain process is that it took Intel more than four years to understand its supply line well enough to ensure that no tantalum from the Congo was in its microprocessor products<sup id="fnref22:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_19">Source<a class="headerlink" href="#source_19" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>That it took over four years for a leading technology company just to understand its own supply chain, reveals just how hard this process can be to grasp from the inside, let alone for external researchers, journalists and academics<sup id="fnref21:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_20">Source<a class="headerlink" href="#source_20" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In The Elements of Power, David S. Abraham describes the invisible networks of rare metals traders in global electronics supply chains: “The network to get rare metals from the mine to your laptop travels through a murky network of traders, processors, and component manufacturers. Traders are the middlemen who do more than buy and sell rare metals: they help to regulate information and are the hidden link that helps in navigating the network between metals plants and the components in our laptops.<sup id="fnref20:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>complex vs complicated, this is clearly a complex interwoven supply chain that is nearly impossible to fully grasp every link in it. (link to grahams lecture)
+—<a href="#"></a></p>
+<h2 id="source_21">Source<a class="headerlink" href="#source_21" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In addition, many of the minerals are smelted together with recycled metals, by which point it becomes all but impossible to trace the minerals to their source. So we see that the attempt to capture the full supply chain is a truly gargantuan task: revealing all the complexity of the 21st century global production of technology products.<sup id="fnref19:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_22">Source<a class="headerlink" href="#source_22" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>This becomes a complex structure of supply chains within supply chains, a zooming fractal of tens of thousands of suppliers, millions of kilometers of shipped materials and hundreds of thousands of workers included within the process even before the product is assembled on the line<sup id="fnref18:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<h2 id="standardizing-shipping"><a href="../../../%40crawfordAnatomyAI%20folder/Standardizing%20shipping/">Standardizing shipping</a><a class="headerlink" href="#standardizing-shipping" title="Permanent link">¶</a></h2>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Its like a cipher themselves, the idea of everything having to be profitable for anyone to do it has lead to trade secrets. It is like a double edged sword, it incentivizes companies to innovate so that they can make more money to grow their monopoly and advance the world but it also hinders new companies from joining because they know nothing of the current technology. 
+—<a href="#"></a></p>
+<h2 id="source_23">Source<a class="headerlink" href="#source_23" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In the same way that medieval alchemists hid their research behind cyphers and cryptic symbolism, contemporary processes for using minerals in devices are protected behind NDAs and trade secrets.<sup id="fnref17:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We are destroying so much of our planet just to get 0.2% of what it has.
+—<a href="#"></a></p>
+<h2 id="source_24">Source<a class="headerlink" href="#source_24" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>David Abraham describes the mining of dysprosium and Terbium used in a variety of high-tech devices in Jianxi, China. He writes, “Only 0.2 percent of the mined clay contains the valuable rare earth elements. This means that 99.8 percent of earth removed in rare earth mining is discarded as waste called “tailings” that are dumped back into the hills and streams,” creating new pollutants like ammonium.
+                31
+                In order to refine one ton of rare earth elements, “the Chinese Society of Rare Earths estimates that the process produces 75,000 liters of acidic water and one ton of radioactive residue.”<sup id="fnref16:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p><a href="../../../Connections%20with%20other%20memex%27s/Destroying%20the%20planet/">Destroying the planet</a></p>
+<h2 id="source_25">Source<a class="headerlink" href="#source_25" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>As a Guardian investigation reports “tin mining is a lucrative but destructive trade that has scarred the island's landscape, bulldozed its farms and forests, killed off its fish stocks and coral reefs, and dented tourism to its pretty palm-lined beaches. The damage is best seen from the air, as pockets of lush forest huddle amid huge swaths of barren orange earth. Where not dominated by mines, this is pockmarked with graves, many holding the bodies of miners who have died over the centuries digging for tin.”<sup id="fnref15:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_26">Source<a class="headerlink" href="#source_26" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Hidden among the thousands of other publicly available patents owned by Amazon, U.S. patent number 9,280,157 represents an extraordinary illustration of worker alienation, a stark moment in the relationship between humans and machines.
+                37
+                It depicts a metal cage intended for the worker, equipped with different cybernetic add-ons, that can be moved through a warehouse by the same motorized system that shifts shelves filled with merchandise. Here, the worker becomes a part of a machinic ballet, held upright in a cage which dictates and constrains their movement<sup id="fnref14:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>In the current society its like everyone is living to make the top 1% happy, it shouldn't be this way we should all be making each other happy and supporting one another.
+—<a href="#"></a></p>
+<h2 id="source_27">Source<a class="headerlink" href="#source_27" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>As we have seen time and time again in the research for our map, dystopian futures are built upon the unevenly distributed dystopian regimes of the past and present, scattered through an array of production chains for modern technical devices. The vanishingly few at the top of the fractal pyramid of value extraction live in extraordinary wealth and comfort. But the majority of the pyramids are made from the dark tunnels of mines, radioactive waste lakes, discarded shipping containers, and corporate factory dormitories.<sup id="fnref13:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>The inefficiency of producing guetta percha had destroyed this plant.
+—<a href="#"></a></p>
+<h2 id="source_28">Source<a class="headerlink" href="#source_28" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>A mature palaquium gutta could yield around 300 grams of latex. But in 1857, the first transatlantic cable was around 3000 km long and weighed 2000 tons – requiring around 250 tons of gutta percha. To produce just one ton of this material required around 900,000 tree trunks. The jungles of Malaysia and Singapore were stripped, and by the early 1880s the palaquium gutta had vanished. In a last-ditch effort to save their supply chain, the British passed a ban in 1883 to halt harvesting the latex, but the tree was already extinct.<sup id="fnref12:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We clearly have not learned from the disaster of the over harvesting of gutta percha, if the extraction of rare minerals keep happening in an unsustainable way something bad is going to happen to the earth.
+—<a href="#"></a></p>
+<h2 id="source_29">Source<a class="headerlink" href="#source_29" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The Victorian environmental disaster of gutta percha, from the early origins of the global information society, shows how the relationships between technology and its materiality, environments, and different forms of exploitation are imbricated. Just as Victorians precipitated ecological disaster for their early cables, so do rare earth mining and global supply chains further imperil the delicate ecological balance of our era. From the material used to build the technology enabling contemporary networked society, to the energy needed for transmitting, analyzing, and storing the data flowing through the massive infrastructure, to the materiality of infrastructure: these deep connections and costs are more significant, and have a far longer history, than is usually represented in the corporate imaginaries of AI<sup id="fnref11:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Again, corporations hiding how terrible what they are doing is for the environment to squeeze every last penny out of people. This is especially disappointing coming from amazon a monopoly that has its roots sunk into many different businesses.
+—<a href="#"></a></p>
+<h2 id="source_30">Source<a class="headerlink" href="#source_30" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Large-scale AI systems consume enormous amounts of energy. Yet the material details of those costs remain vague in the social imagination. It remains difficult to get precise details about the amount of energy consumed by cloud computing services. A Greenpeace report states: “One of the single biggest obstacles to sector transparency is Amazon Web Services (AWS). The world's biggest cloud computer company remains almost completely non-transparent about the energy footprint of its massive operations. Among the global cloud providers, only AWS still refuses to make public basic details on the energy performance and environmental impact associated with its operations.”<sup id="fnref10:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_31">Source<a class="headerlink" href="#source_31" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In many cases, transparency wouldn’t help much – without forms of real choice, and corporate accountability, mere transparency won’t shift the weight of the current power asymmetries.<sup id="fnref9:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<h2 id="monopolies-in-the-modern-world"><a href="../../../%40crawfordAnatomyAI%20folder/Monopolies%20in%20the%20modern%20World/">Monopolies in the modern World</a><a class="headerlink" href="#monopolies-in-the-modern-world" title="Permanent link">¶</a></h2>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We are essentially being free workers training these artificial intelligence. To further the agenda of the top 1%. 
+—<a href="#"></a></p>
+<h2 id="source_32">Source<a class="headerlink" href="#source_32" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In the dynamic of dataset collection through platforms like Facebook, users are feeding and training the neural networks with behavioral data, voice, tagged pictures and videos or medical data. In an era of extractivism, the real value of that data is controlled and exploited by the very few at the top of the pyramid.<sup id="fnref8:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_33">Source<a class="headerlink" href="#source_33" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The second half of the 19th century, with its focus on the construction of infrastructure and the uneven transition to industrialized society, generated enormous wealth for the small number of industrial magnates that monopolized exploitation of natural resources and production processes.<sup id="fnref7:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>We have clearly not learned from the monopolies of the British government and American companies during the early 20th century. We have allowed a few companies to bully their way to the top of the world.
+—<a href="#"></a></p>
+<h2 id="source_34">Source<a class="headerlink" href="#source_34" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The new infinite horizon is data extraction, machine learning, and reorganizing information through artificial intelligence systems of combined human and machinic processing. The territories are dominated by a few global mega-companies, which are creating new infrastructures and mechanisms for the accumulation of capital and exploitation of human and planetary resources.<sup id="fnref6:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_35">Source<a class="headerlink" href="#source_35" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>In this way, we have seen the emergence of multiple cognitive economies from the attention economy,
+                49
+                the surveillance economy, the reputation economy,
+                50
+                and the emotion economy, as well as the quantification and commodification of trust and evidence through cryptocurrencies<sup id="fnref5:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_36">Source<a class="headerlink" href="#source_36" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>Vandana Shiva explains.
+                51
+                In Shiva’s words, “the destruction of commons was essential for the industrial revolution, to provide a supply of natural resources for raw material to industry. A life-support system can be shared, it cannot be owned as private property or exploited for private profit. The commons, therefore, had to be privatized, and people's sustenance base in these commons had to be appropriated, to feed the engine of industrial progress and capital accumulation."<sup id="fnref4:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>Trying to monetize everything possible, now we are even monetizing the everyday lives of humans.
+—<a href="#"></a></p>
+<h2 id="source_37">Source<a class="headerlink" href="#source_37" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>he new gold rush in the context of artificial intelligence is to enclose different fields of human knowing, feeling, and action, in order to capture and privatize those fields<sup id="fnref3:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<h2 id="source_38">Source<a class="headerlink" href="#source_38" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>That is a future where expert local human labor in the public system is augmented and sometimes replaced with centralized, privately-owned corporate AI systems, that are using public data to generate enormous wealth for the very few.<sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<p>The overall complexity of just creating something that seems so simple to the average person is suprising.
+—<a href="#"></a></p>
+<h2 id="source_39">Source<a class="headerlink" href="#source_39" title="Permanent link">¶</a></h2>
+<blockquote>
+<p>The stack that is required to interact with an Amazon Echo goes well beyond the multi-layered ‘technical stack’ of data modeling, hardware, servers and networks. The full stack reaches much further into capital, labor and nature, and demands an enormous amount of each. The true costs of these systems – social, environmental, economic, and political – remain hidden and may stay that way for some time.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+</blockquote>
+<hr/>
+<p>tags: 
+links:<br/>
+- broader terms (BT):<br/>
+- narrower terms (NT):<br/>
+- related terms (RT):<br/>
+- used for (UF) or aliases:<br/>
+connected ideas:<br/>
+MOC:  </p>
+<hr/>
+<div class="footnote">
+<hr/>
+<ol>
+<li id="fn:1">
+<p><a href="https://anatomyof.ai/">Anatomy of an AI System</a> | <a href="tk">syndication link</a> <a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref3:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref4:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref5:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref6:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref7:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref8:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref9:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref10:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref11:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref12:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref13:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref14:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref15:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref16:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref17:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref18:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref19:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref20:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref21:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref22:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref23:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref24:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref25:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref26:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref27:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref28:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref29:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref30:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref31:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref32:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref33:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref34:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref35:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref36:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref37:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref38:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+</article>
+</div>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../../javascripts/mathjax.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</body>
+</html>
