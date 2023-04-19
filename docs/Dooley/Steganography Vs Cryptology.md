@@ -18,3 +18,4 @@ Dooley, J. 2018. _History of Cryptography and Cryptanalysis_. 2018. Available at
 ---
 
 ### Related Links
+[[Ciphers Hold Power in war]] [[first computer protocol]] [[Importance of Data Integrity]] 

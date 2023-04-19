@@ -4,6 +4,6 @@ I know a thing or two about linguistics, so I have a little input. The idea of a
 
 An example would be mandarin and the word "ma", could mean mother, numb, horse, to scold, or to even indicate a question. Conversing over the telegraph loses a lot of the meaning. So this medium is not very practical for most Asian countries.
 Also, a lot of the Asian languages have thousands of characters, imagine having to make a Morse code for each character it would not be feasible.
-![[intonation.png]]
-Related links:
-[[Medium is important]] [[Morse Code]] [[Context of the Work]] [[Specificity is key]] 
+![[intonation.png]] ^4befd9
+## Related links:
+[[Medium is important]] [[Morse Code]] [[Context of the Work]] [[Specificity is key]] [[Computers and languages]] ^daa2a5
