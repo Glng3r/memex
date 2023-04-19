@@ -15,3 +15,7 @@ For memex two, I recommend starting with [[@standageVictorianInternetRemarkable1
 - [[@UMNEvolutionInternet source]] for how the internet as we see it today came to be.
 - [[@DriscollInternetHistory source]] for the opposition views of the internet and why some people did not like it.
 - [[@crawfordAnatomyAI source]] for how Alexa came to be and the sheer interconnectivity of production needed to create the device. 
+## Final Journey
+[[0_Final Journey_1]]
+[[0_Final Journey_2]]
+
